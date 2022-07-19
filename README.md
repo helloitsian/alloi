@@ -4,7 +4,7 @@ Alloi is a simple, fast, and close to the metal Frontend Framework.
 
 ## To Run
 This Framework was made for a future tutorial series where I make a fullstack set of tools from scratch. 
-So currently, the only way to create a Alloi project is to use my (custom bundler)[https://github.com/helloitsian/paquet] and [JSX parser mutator](https://github.com/helloitsian/alloi-jsx) for said bundler.
+So currently, the only way to create a Alloi project is to use my [custom bundler](https://github.com/helloitsian/paquet) and [JSX parser mutator](https://github.com/helloitsian/alloi-jsx) for said bundler.
 
 Steps:
 1. create a project directory for your new project
