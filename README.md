@@ -2,6 +2,28 @@
 
 Alloi is a simple, fast, and close to the metal Frontend Framework.
 
+## Example
+```javascript
+import { useAtomic, createReactor } from "alloi";
+
+const Component = () => {
+  const [count, setCount] = useAtomic(0);
+  
+  createReactor(() => {
+    console.log("Updated count is:", count());
+  });
+  
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count() + 1)}>
+        Incrememnt
+      </button>
+    </div>
+  );
+}
+```
+
 ## To Run
 This Framework was made for a future tutorial series where I make a fullstack set of tools from scratch. 
 So currently, the only way to create a Alloi project is to use my [custom bundler](https://github.com/helloitsian/paquet) and [JSX parser mutator](https://github.com/helloitsian/alloi-jsx) for said bundler.
