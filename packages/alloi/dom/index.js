@@ -1,4 +1,4 @@
-import { createReactor, createCollection } from "../alloi/index.js";
+import { createCollection, createReactor, runReactors } from "../alloi/index.js";
 
 export const createElement = (tag, attrs) => {
   const el = document.createElement(tag);
@@ -17,7 +17,9 @@ export const createElement = (tag, attrs) => {
 // does nothing but might need in future.
 export const createComponent = (Component, props) => {
   createCollection();
-  return Component(props);
+  const rendered = Component(props);
+  runReactors();
+  return rendered;
 }
 
 export const convertToNode = (child) => {

@@ -1,6 +1,15 @@
 let collectionId = 0;
 const collections = {}
 
+const sub = (reactor) => {
+  const owner = collections[`${collectionId - 1}`];
+  owner.reactors.push(reactor);
+}
+
+const unsub = (reactor, owner, index) => {
+  owner.reactors.splice(index, 1);
+  return reactor;
+}
 
 export const createCollection = () => {
   const collection = {
@@ -36,19 +45,18 @@ export const useAtomic = (state) => {
  * when the state of the atomic is changed.
  */
 export const createReactor = (fn, options={}) => {
-  const owner = collections[`${collectionId - 1}`];
-
-  owner.reactors.push(fn);
-    
-  try {
-  	fn();
-  } catch(err) {
-    if (options.once) {
-      owner.reactors.pop();
-    }
-  }
+  sub(fn);
 };
 
+export const runReactors = () => {
+  const owner = collections[`${collectionId - 1}`];
+  for (let reactor of owner.reactors) {
+    reactor();
+  }
+}
+
 export const onMount = (fn) => {
-  createReactor(fn, { once: true });
+  const owner = collections[`${collectionId - 1}`];
+  const reactorIndex = owner.reactors.length;
+  createReactor(() => unsub(fn, owner, reactorIndex)());
 }
