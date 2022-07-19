@@ -1,6 +1,6 @@
 # Alloi
 
-Alloi is a simple, fast, and close to the metal Frontend Framework.
+Alloi is a simple and close to the metal Frontend Framework.
 
 ## Example
 ### Alloi Code
