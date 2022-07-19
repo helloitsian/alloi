@@ -1,0 +1,11 @@
+{
+  "name": "alloi",
+  "version": "0.0.10",
+  "description": "A fast frontend framework that is as close to the metal as possible.",
+  "main": "./packages/alloi/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ian Murawski (helloitsian)",
+  "license": "ISC"
+}
