@@ -1,14 +1,20 @@
-import { useAtomic, render } from "alloi";
+import { useAtomic, createReactor } from "alloi";
 
 const Component = () => {
   const [count, setCount] = useAtomic(0);
-
+  
+  createReactor(() => {
+    console.log("Updated count is:", count());
+  });
+  
   return (
     <div>
       <h1>{count}</h1>
-      <button onClick={() => setCount(count() + 1)}>Click me!</button>
+      <button onClick={() => setCount(count() + 1)}>
+        Incrememnt
+      </button>
     </div>
-  )
+  );
 }
 
 // render the component

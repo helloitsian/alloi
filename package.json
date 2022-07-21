@@ -1,6 +1,6 @@
 {
   "name": "alloi",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "A fast frontend framework that is as close to the metal as possible.",
   "main": "./packages/alloi/index.js",
   "scripts": {

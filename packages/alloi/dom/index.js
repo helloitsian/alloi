@@ -1,4 +1,4 @@
-import { createCollection, createReactor, runReactors } from "../alloi/index.js";
+import { createCollection, createReactor, runReactors } from "../reactive/index.js";
 
 export const createElement = (tag, attrs) => {
   const el = document.createElement(tag);

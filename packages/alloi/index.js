@@ -9,6 +9,5 @@ export {
 export {
   useAtomic,
   createReactor,
-  useCondition,
   onMount,
 } from "./reactive/index.js";

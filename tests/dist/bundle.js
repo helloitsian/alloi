@@ -27,20 +27,15 @@ var _alloi = require("alloi");
 
 const Component = () => {
   const [count, setCount] = (0, _alloi.useAtomic)(0);
-  (0, _alloi.onMount)(() => {
-    console.log("mounted");
-    setCount(count() + 1);
+  (0, _alloi.createReactor)(() => {
+    console.log("Updated count is:", count());
   });
   return (() => {
     const __el0 = (0, _alloi.createElement)("div", {});
 
-    const __el1 = (0, _alloi.createElement)("div", {});
+    const __el1 = (0, _alloi.createElement)("h1", {});
 
-    const __el3 = () => {
-      console.log("rendered");
-      return count;
-    };
-
+    const __el3 = count;
     (0, _alloi.insert)(__el1, __el3);
     (0, _alloi.insert)(__el0, __el1);
 
@@ -48,7 +43,7 @@ const Component = () => {
       "onClick": () => setCount(count() + 1)
     });
 
-    const __txtEl3 = "Click me!";
+    const __txtEl3 = "Incrememnt";
     (0, _alloi.insert)(__el2, __txtEl3);
     (0, _alloi.insert)(__el0, __el2);
     return __el0;
@@ -57,7 +52,7 @@ const Component = () => {
 
 
 const root = document.querySelector("#app");
-(0, _alloi.render)(root, (() => {
+render(root, (() => {
   const __el0 = (0, _alloi.createComponent)(Component, {});
 
   return __el0;
